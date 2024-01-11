@@ -2,12 +2,12 @@ import { Link } from 'react-router-dom';
 
 function sudukoHTML() {
   return (
-    <div className="suduko-app">
+    <div className="suduko-page">
 
       <section className='section-heading'>
         <div className='heading'>
-        <Link to={'/home'}> Click here to go home!</Link>
           <h1 className="title">Suduko</h1>
+          <Link to={'/home'} class='link-home link-style-1'> Click here to go home!</Link>
         </div>
       </section>
 
