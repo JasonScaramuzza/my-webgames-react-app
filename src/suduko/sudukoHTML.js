@@ -31,13 +31,15 @@ function sudukoHTML() {
       <section className='section-page'>
         <div className="page">
           <div>
-              {board.map(([theRows]) => (
-                <div className="row"> 
-                  {theRows.map(([cellID, row, cell]) => (
-                    <div className={`cell ${row} ${cell}`} id={`${cellID}`}>0</div>
-                  ))}
+              {board.map(([theRows]) => {
+                //console.log(theRows);
+                return <div className="row"> 
+                  {theRows.map(([cellID, row, cell]) => {
+                    //console.log([cellID, row, cell]);
+                    return <div className={`cell ${row} ${cell}`} id={`${cellID}`}>0</div>
+                  })}
                 </div>
-              ))}
+              })}
           </div>
         </div>
 
