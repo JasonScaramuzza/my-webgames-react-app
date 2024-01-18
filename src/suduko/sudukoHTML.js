@@ -3,9 +3,10 @@ import './SudukoStyle.css'
 
 
 
-const board = [];
+var board = [];
 
 function createBoard(){
+  board = [];
   for(let i = 0; i< 9; i++){
     var row = [];
     for(let j = 0; j< 9; j++){
