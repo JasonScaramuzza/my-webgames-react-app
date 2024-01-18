@@ -1,9 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import App from './app/App';
-import SudukoPage from './suduko/SudukoPage'
 import { MyRoutes } from './MyRoutes';
 import reportWebVitals from './appPerformance/reportWebVitals';
 
@@ -13,21 +10,12 @@ import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-      <MyRoutes />
-  </React.StrictMode>
-
+  <MyRoutes />
+      
 );
 
-/*
-      <Router>
-        <Routes>
-          <Route path="/" element={<App />}/> 
-          <Route path="/home" element={<App />}/> 
-          <Route path="/suduko" element={<SudukoPage />} />
-        </Routes>
-      </Router>
-*/
+//  <React.StrictMode>
+//  </React.StrictMode>
 
 
 // If you want to start measuring performance in your app, pass a function
