@@ -23,8 +23,8 @@
   
   .cell{
     text-align: center;
-    width: 45px;
-    height: 45px;
+    width: 55px;
+    height: 55px;
     font-size: 30px;
     background-color: white;
     border: 0px;
@@ -64,4 +64,19 @@
     border-bottom: 2px;
     border-style: solid;
     border-color: black;
+  }
+
+  .input-style-1{
+    text-align: center;
+    padding-top: 9px;
+    padding-bottom: 11px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 5px;
+    background: none;
+    width: 40px;
+    height: 40px;
+    font-size: 32px;
+    border: 0;
+    outline: 0;
   }
