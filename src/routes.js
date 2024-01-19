@@ -1,6 +1,6 @@
 import {Routes, Route } from 'react-router-dom';
 import App from './app/App';
-import SudukoPage from './suduko/sudukoPage'
+import SudukoPage from './suduko/SudukoPage'
 
 function routes() {
     return (

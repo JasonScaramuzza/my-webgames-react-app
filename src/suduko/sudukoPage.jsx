@@ -1,6 +1,6 @@
 import '../app/App.css';
 import './SudukoStyle.css'
-import sudukoHTML from './SudukoHTML';
+import SudukoHTML from './SudukoHTML';
 
 const sudukoBoard = [];
 
@@ -22,10 +22,10 @@ function populateSudukoBoard(){
 
 
 
-export function sudukoPage(){
+export function SudukoPage(){
   return (
-    sudukoHTML()
+    SudukoHTML()
   );
 };
 
-export default sudukoPage;
+export default SudukoPage;

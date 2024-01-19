@@ -2,11 +2,9 @@ import { Link } from 'react-router-dom';
 import './SudukoStyle.css'
 
 
-
 var board = [];
 
 function createBoard(){
-  board = [];
   for(let i = 0; i< 9; i++){
     var row = [];
     for(let j = 0; j< 9; j++){
@@ -17,11 +15,11 @@ function createBoard(){
   }
 }
 
-function sudukoHTML() {
+
+function SudukoHTML() {
   createBoard();
   return (
     <div className="suduko-page">
-
       <section className='section-heading'>
         <div className='heading'>
           <h1 className="title">Suduko</h1>
@@ -33,15 +31,17 @@ function sudukoHTML() {
         <div className="page">
           <div>
               {board.map(([theRows]) => {
-                //console.log(theRows);
-                return <div className="row"> 
-                  {theRows.map(([cellID, row, cell]) => {
-                    //console.log([cellID, row, cell]);
-                    return <div className={`cell ${row} ${cell}`} id={`${cellID}`}>0</div>
-                  })}
+                return(
+                <div className="row"> 
+                {theRows.map(([cellID, row, cell]) => {
+                  return(
+                  <div className={`cell ${row} ${cell}`} id={`${cellID}`}>0</div>
+                  )
+                })}
                 </div>
-              })}
+              )})}
           </div>
+          <button className="button1" id="generate-board">Generate</button>
         </div>
 
       </section>
@@ -51,4 +51,4 @@ function sudukoHTML() {
 //{board.map((obj) => (
 //
 //${obj.row} cell ${obj.cell}, ${obj.cellID}
-export default sudukoHTML;
+export default SudukoHTML;
