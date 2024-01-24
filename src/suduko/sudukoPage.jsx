@@ -1,30 +1,28 @@
 import '../app/App.css';
 import './SudukoStyle.css'
-import SudukoHTML from './SudukoHTML';
-
-//const sudukoBoard = [];
-
-//Suduko PAGE
-
-  // function populateSudukoBoard(){
-  //   for(let i= 0; i < 9; i++){
-  //     for(let j= 0; j < 9; j++){
-  //       //row-0-cell-0
-  //       const tileID = "row"+i+"cell"+j;
-  //       sudukoBoard[i][j] = document.getElementById(tileID);
-  //       document.getElementById(tileID).innerHTML = "1"
-  //     };
-  //   };
-  // };
-
-
-//Populate the suduko page
-
+import { Link } from 'react-router-dom';
+import SudukoBoardComponent from './SudukoBoardComponent';
 
 
 export function SudukoPage(){
   return (
-    SudukoHTML()
+    <div className="suduko-page">
+    <section className='section-heading'>
+      <div className='heading'>
+        <h1 className="title">Suduko</h1>
+        <Link to={'/home'} className='link-home link-style-1'> Click here to go home!</Link>
+      </div>
+    </section>
+
+    <section className='section-page'>
+      <div className="page">
+        <div>
+          {SudukoBoardComponent()}
+        </div>
+        <button className="button1" id="generate-board">Generate</button>
+      </div>
+    </section>
+  </div>
   );
 };
 
