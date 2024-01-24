@@ -1,21 +1,11 @@
-export const Cell = (props) => {
-    //props.row
-    //props.cell
-    //props.cellID
-    //props.cellValue
-    //props.cellReadOnly
-    return(
-        <div className={`cell ${props.row} ${props.cell}`} id={props.cellID}>
-            <input
-            className="input-style-1" 
-            id={`input-${props.cellID}`} 
-            defaultValue={props.cellValue} 
-            maxLength="1"
-            type='number'
-            readOnly={props.cellReadOnly}>
-            </input>
-        </div>
-    );
-};
+export class Cell{
+    constructor(row, column, cellID, cellValue, cellReadOnly){
+        this.row = row;
+        this.column = column;
+        this.cellID = cellID;
+        this.cellValue = cellValue;
+        this.cellReadOnly = cellReadOnly;
+    }
+}
 
 export default Cell;

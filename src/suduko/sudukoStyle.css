@@ -23,8 +23,9 @@
   
   .cell{
     text-align: center;
-    width: 55px;
+    width: 37px;
     height: 55px;
+    padding-left: 18px;
     font-size: 30px;
     background-color: white;
     border: 0px;
@@ -34,17 +35,17 @@
     border-color: black;
   }
   
-  .cell-2{
+  .column-2{
     border-right: 2px;
     border-style: solid;
     border-color: black;
   }
-  .cell-5{
+  .column-5{
     border-right: 2px;
     border-style: solid;
     border-color: black;
   }
-  .cell-8{
+  .column-8{
     border-right: 2px;
     border-style: solid;
     border-color: black;
@@ -64,19 +65,4 @@
     border-bottom: 2px;
     border-style: solid;
     border-color: black;
-  }
-
-  .input-style-1{
-    text-align: center;
-    padding-top: 9px;
-    padding-bottom: 11px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-left: 5px;
-    background: none;
-    width: 40px;
-    height: 40px;
-    font-size: 32px;
-    border: 0;
-    outline: 0;
   }
