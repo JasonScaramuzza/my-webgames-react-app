@@ -42,34 +42,49 @@ const SudokuBoardComponent = () =>  {
   async function initialiseGameFromAPI(){
     const newSudokuGame = await requestBoard();
 
-    //console.log(newSudokuGame);
-    //var abc = [];
     newSudokuGame.newboard.grids.map((game) => (
-      //console.log(newSudokuGame.newboard.grids),
       setBoardOne(game.value),
-      //console.log(boardOne),
       setSolution(game.solution),
-      //setLockedCells(formatLockedCells(game.value))
       formatLockedCells(game.value)
-      //console.log(lockedCells)
     ));
   }
 
+  //Replace 0 with empty
+  async function formatInitialBoard(initialBoard){
+    var boardArr = [];
+    var rowArr2 = [];
+
+    initialBoard.forEach((row, rowIndex) => {
+        row.forEach((cell, columnIndex) => {
+          if(cell === 0){
+            rowArr2.push(0);
+          }else{
+            rowArr2.push(cell);
+          }
+        })
+        boardArr.push(rowArr2);
+        rowArr2 = [];
+    })
+    setBoardOne(boardArr);
+  }
+
+
   async function formatLockedCells(initialBoard){
-    var newArr = [];
-    var newArr2 = [];
-      initialBoard.forEach((row, rowIndex) => {
-          row.forEach((cell, columnIndex) => {
-            if(cell === 0){
-              newArr2.push(false);
-            }else{
-              newArr2.push(true);
-            }
-          })
-          newArr.push(newArr2);
-          newArr2 = [];
-      })
-    setLockedCells(newArr);
+    var boardArr = [];
+    var rowArr2 = [];
+
+    initialBoard.forEach((row, rowIndex) => {
+        row.forEach((cell, columnIndex) => {
+          if(cell === 0){
+            rowArr2.push(false);
+          }else{
+            rowArr2.push(true);
+          }
+        })
+        boardArr.push(rowArr2);
+        rowArr2 = [];
+    })
+    setLockedCells(boardArr);
   }
 
 
@@ -84,10 +99,12 @@ const SudokuBoardComponent = () =>  {
         boardOne.map((row, rowIndex) => {
           return(row.map((cell, columnIndex) => {
             if((rowIndex === oldRowIndex)&&(columnIndex === oldColumnIndex)){
-              if(newValue < 1 || newValue > 9){
-                return cell;
+              if(newValue < 0 || newValue > 9){
+                return cell
+              }else if(newValue === null || newValue === ''){
+                return ''
               }else{
-                return (newValue);
+                return (parseInt(newValue));
               }
             }else{
               return cell;
@@ -95,26 +112,29 @@ const SudokuBoardComponent = () =>  {
           }))
         })
       );
-      setBoardOne(updatedBoard);
+      console.log(boardOne)
+      setBoardOne(updatedBoard)
   }
 
   return (
-    //console.log(lockedCells),
     <div>
         {boardOne?.map((row, rowIndex) => {
           return(
           <div className="row" key={rowIndex}> 
             {row.map((cell, columnIndex) => {
-              //console.log(lockedCells[rowIndex][columnIndex])
-              return(             
+              var modifiedCell = cell;
+              if(cell === 0){
+                modifiedCell = '';
+              }
+              return(
                 <input
                     key={rowIndex + "-" + columnIndex}
                     onChange={e => updateCellChange(e.target.value, rowIndex, columnIndex)}
                     className={`cell row-${rowIndex} column-${columnIndex}`}
                     id={`row-${rowIndex}column-${columnIndex}`} 
-                    value={cell} 
+                    value={modifiedCell} 
                     readOnly={lockedCells[rowIndex][columnIndex]}
-                    maxLength="1"
+                    maxLength={1}
                     type='number'>
                 </input>
               );
