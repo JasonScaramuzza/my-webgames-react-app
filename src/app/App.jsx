@@ -11,7 +11,7 @@ function App() {
           <p>Welcome to my webpage. Here, you can play about with some games I've made in React. Enjoy!</p>
         </section>
         <section className='page'>      
-        <Link to={'/suduko'}> Click here to play suduko!</Link>
+        <Link to={'/sudoku'}> Click here to play suduko!</Link>
         </section>
     </div>
   );

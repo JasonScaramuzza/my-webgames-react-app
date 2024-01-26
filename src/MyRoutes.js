@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import App from './app/App';
-import SudukoPage from './suduko/SudukoPage'
+import SudokuPage from './sudoku/SudokuPage'
 
 
 export const MyRoutes = () => {
@@ -9,7 +9,7 @@ export const MyRoutes = () => {
             <Routes>
                 <Route path="/" element={<App />}/> 
                 <Route path="/home" element={<App />}/>
-                <Route path="/suduko" element={<SudukoPage />} />
+                <Route path="/sudoku" element={<SudokuPage />} />
                 
             </Routes>
         </Router>
