@@ -3,7 +3,7 @@ import './SudokuStyle.css'
 import { useState, useEffect } from 'react';
 
 const SudokuBoardComponent = () =>  {
-  const [boardOne, setBoardOne] = useState([
+  const [board, setBoard] = useState([
     [0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0]]);
@@ -31,7 +31,7 @@ const SudokuBoardComponent = () =>  {
 
   //fetch initial board from API
   async function requestBoard(){
-    const res = await fetch(
+    const res = await fetch(                    //XXX Need to catch errors and display loading progress to user
       `https://sudoku-api.vercel.app/api/dosuku`
     );
     const json = await res.json();
@@ -43,31 +43,11 @@ const SudokuBoardComponent = () =>  {
     const newSudokuGame = await requestBoard();
 
     newSudokuGame.newboard.grids.map((game) => (
-      setBoardOne(game.value),
+      setBoard(game.value),
       setSolution(game.solution),
       formatLockedCells(game.value)
     ));
   }
-
-  //Replace 0 with empty
-  async function formatInitialBoard(initialBoard){
-    var boardArr = [];
-    var rowArr2 = [];
-
-    initialBoard.forEach((row, rowIndex) => {
-        row.forEach((cell, columnIndex) => {
-          if(cell === 0){
-            rowArr2.push(0);
-          }else{
-            rowArr2.push(cell);
-          }
-        })
-        boardArr.push(rowArr2);
-        rowArr2 = [];
-    })
-    setBoardOne(boardArr);
-  }
-
 
   async function formatLockedCells(initialBoard){
     var boardArr = [];
@@ -87,16 +67,19 @@ const SudokuBoardComponent = () =>  {
     setLockedCells(boardArr);
   }
 
-
-
-  //validate board state is complete and game is completed (1-9 in all rows, column and boxes) (activated on button click)
-
-  //refresh game to new game (activated on button click)
-
+  function checkResults(){
+    if(solution.join() === board.join()){
+      console.log(true);
+      return true;
+    }else{
+      console.log(false);
+      return false;
+    }
+  }
 
   function updateCellChange(newValue, oldRowIndex, oldColumnIndex){
       const updatedBoard = (
-        boardOne.map((row, rowIndex) => {
+        board.map((row, rowIndex) => {
           return(row.map((cell, columnIndex) => {
             if((rowIndex === oldRowIndex)&&(columnIndex === oldColumnIndex)){
               if(newValue < 0 || newValue > 9){
@@ -112,13 +95,14 @@ const SudokuBoardComponent = () =>  {
           }))
         })
       );
-      console.log(boardOne)
-      setBoardOne(updatedBoard)
+      setBoard(updatedBoard)
+      console.log(board)
+      console.log(solution)
   }
 
   return (
     <div>
-        {boardOne?.map((row, rowIndex) => {
+        {board?.map((row, rowIndex) => {
           return(
           <div className="row" key={rowIndex}> 
             {row.map((cell, columnIndex) => {
@@ -128,20 +112,32 @@ const SudokuBoardComponent = () =>  {
               }
               return(
                 <input
-                    key={rowIndex + "-" + columnIndex}
-                    onChange={e => updateCellChange(e.target.value, rowIndex, columnIndex)}
-                    className={`cell row-${rowIndex} column-${columnIndex}`}
-                    id={`row-${rowIndex}column-${columnIndex}`} 
-                    value={modifiedCell} 
-                    readOnly={lockedCells[rowIndex][columnIndex]}
-                    maxLength={1}
-                    type='number'>
+                  key={rowIndex + "-" + columnIndex}
+                  onChange={e => updateCellChange(e.target.value, rowIndex, columnIndex)}
+                  className={`cell row-${rowIndex} column-${columnIndex}`}
+                  id={`row-${rowIndex}column-${columnIndex}`} 
+                  value={modifiedCell} 
+                  readOnly={lockedCells[rowIndex][columnIndex]}
+                  maxLength={1}
+                  type='number'>
                 </input>
               );
             })}
           </div>
           )
         })}
+        <button 
+          onClick={() => initialiseGameFromAPI()}
+          className="button-new-game" 
+          id="button-new-game">
+          New Game
+        </button>
+        <button
+          onClick={() => checkResults()}
+          className="button-submit"
+          id="button-submit">
+          Submit
+        </button>
     </div>
   );
 };

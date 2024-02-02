@@ -15,15 +15,9 @@ export function SudokuPage(){
 
     <section className='section-page'>
       <Link to={'/home'} className='link-home link-style-1'> Click here to go home!</Link>
-      <div className='sudoku-board-container'>
+      <div className='sudoku-game-container'>
         {SudokuBoardComponent()}
       </div>
-      <button 
-      className="button1" 
-      id="generate-board">
-        Generate New Game
-        </button>
-      <button>Submit</button>
     </section>
   </div>
   );
