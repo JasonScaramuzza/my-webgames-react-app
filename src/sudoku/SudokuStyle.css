@@ -4,65 +4,92 @@
     height: 100%;
   }
   
-  .title {
-    text-align: center;
-    font-size: 60px;
-    background-color: teal;
-    margin-top: 0px;
-    padding-bottom: 10px;
-  }
-  
-  .page{
-    background-color: aqua;
-  }
-  
-  .row{
-    display: flex;
-    justify-content: center;
-  }
-  
-  .cell{
-    text-align: center;
-    width: 37px;
-    height: 55px;
-    padding-left: 18px;
-    font-size: 30px;
-    background-color: white;
-    border: 0px;
-    border-left: 1px;
-    border-top: 1px;
-    border-style: solid;
-    border-color: black;
-  }
-  
-  .column-2{
-    border-right: 2px;
-    border-style: solid;
-    border-color: black;
-  }
-  .column-5{
-    border-right: 2px;
-    border-style: solid;
-    border-color: black;
-  }
-  .column-8{
-    border-right: 2px;
-    border-style: solid;
-    border-color: black;
-  }
-  
-  .row-2{
-    border-bottom: 2px;
-    border-style: solid;
-    border-color: black;
-  }
-  .row-5{
-    border-bottom: 2px;
-    border-style: solid;
-    border-color: black;
-  }
-  .row-8{
-    border-bottom: 2px;
-    border-style: solid;
-    border-color: black;
-  }
+.title {
+  text-align: center;
+  font-size: 60px;
+  background-color: teal;
+  margin-top: 0px;
+  padding-bottom: 10px;
+}
+
+.page{
+  background-color: aqua;
+}
+
+.row{
+  display: flex;
+  justify-content: center;
+}
+
+.cell{
+  text-align: center;
+  width: 37px;
+  height: 55px;
+  padding-left: 18px;
+  font-size: 30px;
+  background-color: white;
+  border: 0px;
+  border-left: 1px;
+  border-top: 1px;
+  border-style: solid;
+  border-color: black;
+}
+
+.column-2{
+  border-right: 2px;
+  border-style: solid;
+  border-color: black;
+}
+.column-5{
+  border-right: 2px;
+  border-style: solid;
+  border-color: black;
+}
+.column-8{
+  border-right: 2px;
+  border-style: solid;
+  border-color: black;
+}
+
+.row-2{
+  border-bottom: 2px;
+  border-style: solid;
+  border-color: black;
+}
+.row-5{
+  border-bottom: 2px;
+  border-style: solid;
+  border-color: black;
+}
+.row-8{
+  border-bottom: 2px;
+  border-style: solid;
+  border-color: black;
+}
+.sudoku-options{
+  margin: 0 auto;
+  text-align: center;
+}
+.sudoku-difficulty-selection{
+  display:flex;
+  margin: 0 auto;
+  margin-top: 10px;
+  justify-content: center;
+  text-align: center;
+  font-size: 16px;
+  width: 180px;
+}
+.button-new-game{
+  margin: 40px;
+}
+.button-submit{
+  margin: 40px;
+}
+.button-style-1{
+  width: 180px;
+  height: 55px;
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}

@@ -34,7 +34,8 @@ const SudokuBoardComponent = () =>  {
     const res = await fetch(                    //XXX Need to catch errors and display loading progress to user
       `https://sudoku-api.vercel.app/api/dosuku`
     );
-    const json = await res.json();
+    const json = await res.json();  //API doesn't provide feature to customise the query. (No selecting difficulty)
+    console.log(json.newboard.grids);
     return json;
   }
 
@@ -69,10 +70,10 @@ const SudokuBoardComponent = () =>  {
 
   function checkResults(){
     if(solution.join() === board.join()){
-      console.log(true);
+      console.log(true);    //Modal - success, notification pop-up.
       return true;
     }else{
-      console.log(false);
+      console.log(false);   //Modal - failure, how many incorrect cells are there.
       return false;
     }
   }
@@ -126,18 +127,27 @@ const SudokuBoardComponent = () =>  {
           </div>
           )
         })}
-        <button 
-          onClick={() => initialiseGameFromAPI()}
-          className="button-new-game" 
-          id="button-new-game">
-          New Game
-        </button>
-        <button
-          onClick={() => checkResults()}
-          className="button-submit"
-          id="button-submit">
-          Submit
-        </button>
+        <div className="sudoku-options">
+          <h2 className="select-difficulty">Select difficulty</h2>
+          <select 
+            className="sudoku-difficulty-selection">
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+          </select>
+          <button 
+            onClick={() => initialiseGameFromAPI()}
+            className="button-new-game button-style-1" 
+            id="button-new-game">
+            New Game
+          </button>
+          <button
+            onClick={() => checkResults()}
+            className="button-submit button-style-1"
+            id="button-submit">
+            Submit
+          </button>
+        </div>
     </div>
   );
 };
