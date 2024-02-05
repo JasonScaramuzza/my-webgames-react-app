@@ -9,7 +9,7 @@ export function SudokuPage(){
     <div className="suduko-page">
     <section className='section-heading'>
       <div className='heading'>
-        <h1 className="title">Suduko</h1>
+        <h1 className="title">Sudoku</h1>
       </div>
     </section>
 
