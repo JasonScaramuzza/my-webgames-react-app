@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faCubes } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
 
 
-const NAVBAR = ["Jason Scaramuzza","Projects","About","Contact","LinkedIn","Indeed Resume","Github"];
+const NAVBAR = ["Jason Scaramuzza","Projects","About","Contact","LinkedIn","Github","Indeed Resume"];
 
 //MAIN PAGE
 
@@ -15,7 +17,12 @@ function App() {
         <nav>
           <ul>
             <li>
-              <h1><a href="home">{NAVBAR[0]}</a></h1>
+              <h1>
+                <a href="home">
+                  <FontAwesomeIcon icon={faCubes} aria-hidden="true"/>
+                  <span>{NAVBAR[0]}</span>
+                </a>
+              </h1>
             </li>
             <li><a href="#projects">{NAVBAR[1]}</a></li> 
             <li><a href="about">{NAVBAR[2]}</a></li>
@@ -30,14 +37,15 @@ function App() {
             </li>
             <li>
               <a 
-                href="https://profile.indeed.com/p/jasons-vd2jcl7"
+                href="https://github.com/JasonScaramuzza"
                 target="_blank">
-                {NAVBAR[5]}
+                <FontAwesomeIcon icon={faGithub} aria-hidden="true"/>
+                <span class="sr-only">{NAVBAR[5]}</span>
               </a>
             </li>
             <li>
               <a 
-                href="https://github.com/JasonScaramuzza"
+                href="https://profile.indeed.com/p/jasons-vd2jcl7"
                 target="_blank">
                 {NAVBAR[6]}
               </a>

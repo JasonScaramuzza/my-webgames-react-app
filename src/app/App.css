@@ -1,5 +1,4 @@
-/* variables declared here - these are the colors for our pages, 
-as well as the font stacks and sizes. */
+/* variables - page colors, font stacks and sizes. */
 :root {
   --black: #171321;
   --dkblue: #0d314b;
@@ -72,9 +71,17 @@ nav li:first-child {
   text-align: center;
 }
 
-nav [class*="fa-"] {  /* FontAwesomeIcon Component */
+/* FontAwesomeIcon React Components 
+all have fa- classes */
+nav [class*="fa-"] {  
   font-size: 150%;
   color: var(--aqua);
+}
+
+nav h1 [class*="fa-"] { 
+  font-size: 100%;
+  color: var(--aqua);
+  margin-right:5px;
 }
 
 nav a {
@@ -83,7 +90,8 @@ nav a {
   display: block;
 }
 
-nav a:hover {
+nav a:hover,
+nav [class*="fa-"]:hover{
   color: var(--magenta);
 }
 
