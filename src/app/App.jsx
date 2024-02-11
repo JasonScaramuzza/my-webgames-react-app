@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import './App.css';
+
 
 const NAVBAR = ["Jason Scaramuzza","Projects","About","Contact","LinkedIn","Indeed Resume","Github"];
 
@@ -21,7 +24,8 @@ function App() {
               <a 
                 href="https://www.linkedin.com/in/jason-scaramuzza-842ba8181/" 
                 target="_blank">
-                {NAVBAR[4]}
+                <FontAwesomeIcon icon={faLinkedin} aria-hidden="true"/> 
+                <span class="sr-only">{NAVBAR[4]}</span>
               </a>
             </li>
             <li>
