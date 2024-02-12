@@ -1,5 +1,4 @@
 /* eslint-disable no-sequences */
-import './SudokuStyle.css'
 import { useState, useEffect } from 'react';
 
 const SudokuBoardComponent = () =>  {
@@ -102,7 +101,8 @@ const SudokuBoardComponent = () =>  {
   }
 
   return (
-    <div>
+    <div id="sudoku-game">
+      <section id="board">
         {board?.map((row, rowIndex) => {
           return(
           <div className="row" key={rowIndex}> 
@@ -120,34 +120,28 @@ const SudokuBoardComponent = () =>  {
                   value={modifiedCell} 
                   readOnly={lockedCells[rowIndex][columnIndex]}
                   maxLength={1}
-                  type='number'>
+                  type='numeric'>
                 </input>
               );
             })}
           </div>
           )
         })}
-        <div className="sudoku-options">
-          <h2 className="select-difficulty">Select difficulty</h2>
-          <select 
-            className="sudoku-difficulty-selection">
-            <option value="Easy">Easy</option>
-            <option value="Medium">Medium</option>
-            <option value="Hard">Hard</option>
-          </select>
-          <button 
-            onClick={() => initialiseGameFromAPI()}
-            className="button-new-game button-style-1" 
-            id="button-new-game">
-            New Game
-          </button>
-          <button
-            onClick={() => checkResults()}
-            className="button-submit button-style-1"
-            id="button-submit">
-            Submit
-          </button>
-        </div>
+      </section>
+      <section id="sudoku-options">
+        <button 
+          onClick={() => initialiseGameFromAPI()}
+          className="button-new-game button-style-1" 
+          id="button-new-game">
+          New Game
+        </button>
+        <button
+          onClick={() => checkResults()}
+          className="button-submit button-style-1"
+          id="button-submit">
+          Submit
+        </button>
+      </section>
     </div>
   );
 };

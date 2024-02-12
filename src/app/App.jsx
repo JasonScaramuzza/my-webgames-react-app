@@ -18,7 +18,7 @@ function App() {
           <ul>
             <li>
               <h1>
-                <a href="home">
+                <a href="home"> 
                   <FontAwesomeIcon icon={faCubes} aria-hidden="true"/>
                   <span>{NAVBAR[0]}</span>
                 </a>
@@ -71,15 +71,19 @@ function App() {
           <h2>Projects I'm proud of</h2>
           <article>
             <div class="project-text">
-              <h4>Latest Project</h4>
-              <h3>Example Project Name</h3>
-              <p>Description of the project. This should be fairly concise while 
-                also describing the key components that you developed or worked on. 
-                It can be as long as you need it to be but should at least be a few 
-                sentences long. Be sure to include specific links anywhere in the 
-                description. A link looks like <a 
-                href="https://frontendmasters.github.io/grid-flexbox-v2/">this</a>, 
-                and multiple links look <a href="#">like this</a> and <a href="#">like this</a>.
+              <h4>Personal Project</h4>
+              <div className="link-style-1-container">
+                <Link to="/sudoku"> 
+                    <h3>Sudoku</h3>
+                </Link>
+              </div>
+              <p>This project is uses HTML, CSS and JavaScript to create a game of Sudoku. 
+                The boards are currently pulled from the <a 
+                href="https://sudoku-api.vercel.app/"
+                target="_blank" rel="noreferrer">Dosuku</a> API. This API provides 
+                sodoku boards and solutions at 3 difficulties, Easy, Medium and Hard. 
+                The API however, does not allow for custom queries, therefore which difficulty 
+                you get is comletely up to chance!
               </p>
               <h4>Technologies used include:</h4>
               <ul>
@@ -154,8 +158,8 @@ function App() {
       <div class="section-contact-me-container">
         <section id="contact-me">
           <h2>Contact me</h2>
-          <p>I'm always interested in hearing about new job opportunities, 
-            learning new languages and new design techniques.</p>
+          <p>I'm always interested in hearing about new opportunities, 
+            learning new languages and design techniques.</p>
           <p>
             <a 
               href="mailto:jason.scaramuzza@gmail.com" 
@@ -194,7 +198,7 @@ function App() {
             </a>
           </li>
         </ul>
-        <p><small>&copy; 2024 Jason Scaramuzza. All rights reserved.</small></p>
+        <p><small>&copy; 2023 Jason Scaramuzza. All rights reserved.</small></p>
       </footer>
     </div>
   );

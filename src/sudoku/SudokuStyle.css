@@ -1,76 +1,86 @@
-.suduko-page{
-    background-color: aqua;
-    width: auto;
-    height: auto;
-  }
-  
-.title {
+/* intro */
+
+#sudoku-intro {
+  padding: 4rem 1rem 2rem 1rem;
+  margin: 0 auto;
+  background-color: var(--dkblue);
+}
+
+#sudoku-intro h2 {
+  font-size: 4rem;
+  color: var(--aqua);
   text-align: center;
-  font-size: 60px;
-  background-color: teal;
-  margin-top: 0px;
-  padding-bottom: 10px;
 }
 
-.page{
-  background-color: aqua;
+/* suduko board */
+.sudoku-game-container {
+  background-color: var(--dkblue);
 }
 
-.row{
+#board {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.row {
   display: flex;
   justify-content: center;
 }
 
-.cell{
+.cell {
   text-align: center;
-  width: 37px;
+  width: 55px;
   height: 55px;
-  padding-left: 18px;
   font-size: 30px;
   background-color: white;
-  border: 0px;
-  border-left: 1px;
-  border-top: 1px;
-  border-style: solid;
-  border-color: black;
+  border: 0px solid black;
+  border-left: 1px solid black;
+  border-top: 1px solid black;
 }
 
-.column-2{
-  border-right: 2px;
-  border-style: solid;
-  border-color: black;
-}
-.column-5{
-  border-right: 2px;
-  border-style: solid;
-  border-color: black;
-}
-.column-8{
+.column-2 {
   border-right: 2px;
   border-style: solid;
   border-color: black;
 }
 
-.row-2{
+.column-5 {
+  border-right: 2px;
+  border-style: solid;
+  border-color: black;
+}
+
+.column-8 {
+  border-right: 2px;
+  border-style: solid;
+  border-color: black;
+}
+
+.row-2 {
   border-bottom: 2px;
   border-style: solid;
   border-color: black;
 }
-.row-5{
+
+.row-5 {
   border-bottom: 2px;
   border-style: solid;
   border-color: black;
 }
-.row-8{
+
+.row-8 {
   border-bottom: 2px;
   border-style: solid;
   border-color: black;
 }
-.sudoku-options{
+
+#sudoku-options {
   margin: 0 auto;
   text-align: center;
 }
-.sudoku-difficulty-selection{
+
+.sudoku-difficulty-selection {
   display:flex;
   margin: 0 auto;
   margin-top: 10px;
@@ -79,13 +89,16 @@
   font-size: 16px;
   width: 180px;
 }
-.button-new-game{
+
+.button-new-game {
   margin: 40px;
 }
-.button-submit{
+
+.button-submit {
   margin: 40px;
 }
-.button-style-1{
+
+.button-style-1 {
   width: 180px;
   height: 55px;
   background-color: blue;

@@ -168,8 +168,14 @@ nav [class*="fa-"]:hover{
   margin-bottom: calc(2.5rem * 1.5);
 }
 
-#projects h3 {
+#projects .link-style-1-container a{
   color: var(--aqua);
+  text-decoration-color: var(--aqua);
+}
+
+#projects .link-style-1-container a:hover{
+  color: var(--hotmag);
+  text-decoration: none;
 }
 
 #projects h4 {

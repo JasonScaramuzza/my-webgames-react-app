@@ -8,7 +8,7 @@ export const MyRoutes = () => {
         <Router>
             <Routes>
                 <Route path="/" element={<App />}/> 
-                <Route path="/home" element={<App />}/>
+                <Route path="/home" element={<App />}/> 
                 <Route path="/sudoku" element={<SudokuPage />} />
             </Routes>
         </Router>
