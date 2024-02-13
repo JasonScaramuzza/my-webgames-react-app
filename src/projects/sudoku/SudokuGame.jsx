@@ -2,10 +2,9 @@
 import { useState, useEffect } from 'react';
 import SudokuModalSuccess from './SudokuModalSuccess';
 import SudokuModalFail from './SudokuModalFail';
-import './SudokuBoardComponent.css'
-//import './SudokuModalSuccess.css';
+import './SudokuGame.css'
 
-const SudokuBoardComponent = () =>  {
+const SudokuGame = () =>  {
   const [board, setBoard] = useState([
     [0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],
@@ -73,10 +72,8 @@ const SudokuBoardComponent = () =>  {
 
   function checkResults(){
     if(solution.join() === board.join()){
-      console.log(true);
       setSuccessModalOpen(true);
     }else{
-      console.log(false);
       setFailModalOpen(true);
     }
   }
@@ -100,8 +97,6 @@ const SudokuBoardComponent = () =>  {
         })
       );
       setBoard(updatedBoard)
-      console.log(board)
-      console.log(solution)
   }
 
   const handleModalButtonClick = () => {
@@ -111,7 +106,6 @@ const SudokuBoardComponent = () =>  {
 
   return (
     <div id="sudoku-game-component-container">
-
       <section id="board">
         {board?.map((row, rowIndex) => {
           return(
@@ -161,15 +155,21 @@ const SudokuBoardComponent = () =>  {
             handleModalButtonClick();
             initialiseGameFromAPI();
           }} 
-          onCancel={handleModalButtonClick()} 
-          onClose={handleModalButtonClick()}>
+          onCancel={ () => {
+            handleModalButtonClick();
+          }}
+          onClose={() => {
+            handleModalButtonClick();
+          }}>
           <h2>Success</h2>
           <p>Congratulations, you completed the Sudoku!</p>
         </SudokuModalSuccess>
       )}
       {failModalOpen && (
         <SudokuModalFail
-          onClose={handleModalButtonClick()}>
+          onClose={() => {
+            handleModalButtonClick();
+          }}>
           <h2>Incorrect</h2>
           <p>Keep going, you can do it!</p>
         </SudokuModalFail>
@@ -179,4 +179,4 @@ const SudokuBoardComponent = () =>  {
   );
 };
 
-export default SudokuBoardComponent;
+export default SudokuGame;

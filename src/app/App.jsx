@@ -2,58 +2,19 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
-import { faCubes } from '@fortawesome/free-solid-svg-icons';
+
+import MyHeader from '../myHeader/MyHeader';
+
 import './App.css';
-
-
-const NAVBAR = ["Jason Scaramuzza","Projects","About","Contact","LinkedIn","Github","Indeed Resume"];
 
 //MAIN PAGE
 
 function App() {
   return (
     <div className="main-page">
-      <section id="nav-bar">
-        <nav>
-          <ul>
-            <li>
-              <h1>
-                <a href="home"> 
-                  <FontAwesomeIcon icon={faCubes} aria-hidden="true"/>
-                  <span>{NAVBAR[0]}</span>
-                </a>
-              </h1>
-            </li>
-            <li><a href="#projects">{NAVBAR[1]}</a></li> 
-            <li><a href="about">{NAVBAR[2]}</a></li>
-            <li><a href="#contact-me">{NAVBAR[3]}</a></li>
-            <li>
-              <a 
-                href="https://www.linkedin.com/in/jason-scaramuzza-842ba8181/" 
-                target="_blank" rel="noreferrer">
-                <FontAwesomeIcon icon={faLinkedin} aria-hidden="true"/> 
-                <span className="sr-only">{NAVBAR[4]}</span>
-              </a>
-            </li>
-            <li>
-              <a 
-                href="https://github.com/JasonScaramuzza"
-                target="_blank" rel="noreferrer">
-                <FontAwesomeIcon icon={faGithub} aria-hidden="true"/>
-                <span className="sr-only">{NAVBAR[5]}</span>
-              </a>
-            </li>
-            <li>
-              <a 
-                href="https://profile.indeed.com/p/jasons-vd2jcl7"
-                target="_blank" rel="noreferrer"
-                className="link-style-button">
-                {NAVBAR[6]}
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </section>
+      
+      <MyHeader />
+
       <div className="gradient-1"></div>
 
       <section id="intro">
@@ -107,9 +68,7 @@ function App() {
                 also describing the key components that you developed or worked on. 
                 It can be as long as you need it to be but should at least be a few 
                 sentences long. Be sure to include specific links anywhere in the 
-                description. A link looks like <a 
-                href="https://frontendmasters.github.io/grid-flexbox-v2/">this</a>, 
-                and multiple links look <a href="#">like this</a> and <a href="#">like this</a>.
+                description.
               </p>
               <h4>Technologies used include:</h4>
               <ul>
@@ -133,9 +92,7 @@ function App() {
                 also describing the key components that you developed or worked on. 
                 It can be as long as you need it to be but should at least be a few 
                 sentences long. Be sure to include specific links anywhere in the 
-                description. A link looks like <a 
-                href="https://frontendmasters.github.io/grid-flexbox-v2/">this</a>, 
-                and multiple links look <a href="#">like this</a> and <a href="#">like this</a>.
+                description.
               </p>
               <h4>Technologies used include:</h4>
               <ul>
@@ -163,7 +120,7 @@ function App() {
           <p>
             <a 
               href="mailto:jason.scaramuzza@gmail.com" 
-              class="link-style-button">
+              className="link-style-button">
               Email me
             </a>
           </p>
@@ -179,7 +136,7 @@ function App() {
               href="https://www.linkedin.com/in/jason-scaramuzza-842ba8181/" 
               target="_blank" rel="noreferrer">
               <FontAwesomeIcon icon={faLinkedin} aria-hidden="true"/> 
-              <span className="sr-only">{NAVBAR[4]}</span>
+              <span className="sr-only">LinkedIn</span>
             </a>
           </li>
           <li>
@@ -187,14 +144,14 @@ function App() {
               href="https://github.com/JasonScaramuzza"
               target="_blank" rel="noreferrer">
               <FontAwesomeIcon icon={faGithub} aria-hidden="true"/>
-              <span className="sr-only">{NAVBAR[5]}</span>
+              <span className="sr-only">Github</span>
             </a>
           </li>
           <li>
             <a 
               href="mailto:jason.scaramuzza@gmail.com">
               <FontAwesomeIcon icon={faEnvelope} aria-hidden="true"/>
-              <span className="sr-only">{NAVBAR[3]}</span>
+              <span className="sr-only">Contact</span>
             </a>
           </li>
         </ul>

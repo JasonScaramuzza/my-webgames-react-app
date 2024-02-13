@@ -55,3 +55,30 @@
     border-style: solid;
     border-color: black;
   }
+
+
+  /* sudoku-options */
+  #sudoku-options {
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .button-new-game {
+    margin: 40px;
+  }
+  
+  .button-submit {
+    margin: 40px;
+  }
+  
+  .button-style-1 {
+    width: 180px;
+    height: 55px;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 10px, solid, red;
+  }
+  
