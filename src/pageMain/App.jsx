@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
-import MyHeader from '../myHeader/MyHeader';
+import MyHeader from '../globalComponents/myHeader/MyHeader';
 
 import './App.css';
 
@@ -25,6 +25,7 @@ function App() {
         <p>Currently I am engaged in work expereince at Riskwell, 
         a Risk Management SaaS based organisation, whilst looking for a job.</p>
       </section>
+
       <div className="gradient-1"></div>
 
       <div className="section-projects-container">
@@ -112,6 +113,7 @@ function App() {
       </div>
 
       <div className="gradient-1"></div>
+
       <div className="section-contact-me-container">
         <section id="contact-me">
           <h2>Contact me</h2>
@@ -126,6 +128,7 @@ function App() {
           </p>
         </section>
       </div>
+      
       <div className="gradient-1"></div>
 
       <footer>

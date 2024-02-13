@@ -4,7 +4,7 @@ import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faCubes } from '@fortawesome/free-solid-svg-icons';
 import SudokuGame from './SudokuGame';
-import MyHeader from '../../myHeader/MyHeader';
+import MyHeader from '../../globalComponents/myHeader/MyHeader';
 
 import './SudokuPage.css'
 
