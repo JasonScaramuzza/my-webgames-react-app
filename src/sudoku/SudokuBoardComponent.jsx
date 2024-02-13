@@ -1,5 +1,9 @@
 /* eslint-disable no-sequences */
 import { useState, useEffect } from 'react';
+import SudokuModalSuccess from './SudokuModalSuccess';
+import SudokuModalFail from './SudokuModalFail';
+import './SudokuBoardComponent.css'
+//import './SudokuModalSuccess.css';
 
 const SudokuBoardComponent = () =>  {
   const [board, setBoard] = useState([
@@ -21,6 +25,8 @@ const SudokuBoardComponent = () =>  {
     [false,false,false,false,false,false,false,false,false],
     [false,false,false,false,false,false,false,false,false]
   ]);
+  const [successModalOpen, setSuccessModalOpen] = useState(false);
+  const [failModalOpen, setFailModalOpen] = useState(false);
 
   useEffect(() => {
     initialiseGameFromAPI();
@@ -69,11 +75,11 @@ const SudokuBoardComponent = () =>  {
 
   function checkResults(){
     if(solution.join() === board.join()){
-      console.log(true);    //Modal - success, notification pop-up.
-      return true;
+      console.log(true);
+      setSuccessModalOpen(true);
     }else{
-      console.log(false);   //Modal - failure, how many incorrect cells are there.
-      return false;
+      console.log(false);
+      setFailModalOpen(true);
     }
   }
 
@@ -100,8 +106,14 @@ const SudokuBoardComponent = () =>  {
       console.log(solution)
   }
 
+  const handleButtonSubmitClick = () => {
+    setSuccessModalOpen(false);
+    setFailModalOpen(false);
+  }
+
   return (
-    <div id="sudoku-game">
+    <div id="sudoku-game-component-container">
+
       <section id="board">
         {board?.map((row, rowIndex) => {
           return(
@@ -128,6 +140,7 @@ const SudokuBoardComponent = () =>  {
           )
         })}
       </section>
+
       <section id="sudoku-options">
         <button 
           onClick={() => initialiseGameFromAPI()}
@@ -142,6 +155,26 @@ const SudokuBoardComponent = () =>  {
           Submit
         </button>
       </section>
+
+      {successModalOpen && (
+        <SudokuModalSuccess
+          onSubmit={handleButtonSubmitClick} 
+          onCancel={handleButtonSubmitClick} 
+          onClose={handleButtonSubmitClick}>
+          <h1>Success</h1>
+          <p>Modal for sudoku game successful completeion!</p>
+        </SudokuModalSuccess>
+      )}
+
+      {failModalOpen && (
+        <SudokuModalFail
+          onSubmit={handleButtonSubmitClick} 
+          onCancel={handleButtonSubmitClick} 
+          onClose={handleButtonSubmitClick}>
+          <h1>Incorrect!</h1>
+          <p>Modal for sudoku game failed completeion!</p>
+        </SudokuModalFail>
+      )}
     </div>
   );
 };
