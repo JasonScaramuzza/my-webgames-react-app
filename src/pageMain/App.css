@@ -147,37 +147,6 @@ img {
   border-radius: 25px;
 }
 
-/* contact-me */
-
-#contact-me {
-  width: 400px;
-  text-align: center;
-  margin: 0 auto;
-  padding: 3rem 0;
-}
-
-#contact-me p:last-child {
-  margin-top: 3rem;
-}
-
-/* footer */
-
-footer {
-  text-align: center;
-  padding: 4rem 0;
-}
-
-footer ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  gap: 3rem;
-  font-size: 3rem;
-}
-
 /* Screen Resizing Accessability */
 
 @media (min-width: 550px){
