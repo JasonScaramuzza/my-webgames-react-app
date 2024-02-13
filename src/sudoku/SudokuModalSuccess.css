@@ -37,6 +37,7 @@
 
 .close { 
     cursor: pointer;
+    color: black;
 }
 
 .modal-header {
@@ -47,6 +48,7 @@
 
 .modal-content { 
     margin-bottom: 2rem;
+    color: black;
 }
 
 .modal-footer { 

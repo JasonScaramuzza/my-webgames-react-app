@@ -1,0 +1,57 @@
+#board {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .cell {
+    text-align: center;
+    width: 55px;
+    height: 55px;
+    font-size: 30px;
+    background-color: white;
+    border: 0px solid black;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+  }
+  
+  .column-2 {
+    border-right: 2px;
+    border-style: solid;
+    border-color: black;
+  }
+  
+  .column-5 {
+    border-right: 2px;
+    border-style: solid;
+    border-color: black;
+  }
+  
+  .column-8 {
+    border-right: 2px;
+    border-style: solid;
+    border-color: black;
+  }
+  
+  .row-2 {
+    border-bottom: 2px;
+    border-style: solid;
+    border-color: black;
+  }
+  
+  .row-5 {
+    border-bottom: 2px;
+    border-style: solid;
+    border-color: black;
+  }
+  
+  .row-8 {
+    border-bottom: 2px;
+    border-style: solid;
+    border-color: black;
+  }

@@ -36,10 +36,10 @@ const SudokuBoardComponent = () =>  {
 
   //fetch initial board from API
   async function requestBoard(){
-    const res = await fetch(                    //XXX Need to catch errors and display loading progress to user
+    const res = await fetch(
       `https://sudoku-api.vercel.app/api/dosuku`
     );
-    const json = await res.json();  //API doesn't provide feature to customise the query. (No selecting difficulty)
+    const json = await res.json();
     console.log(json.newboard.grids);
     return json;
   }
@@ -47,7 +47,6 @@ const SudokuBoardComponent = () =>  {
   //ininitialise board
   async function initialiseGameFromAPI(){
     const newSudokuGame = await requestBoard();
-
     newSudokuGame.newboard.grids.map((game) => (
       setBoard(game.value),
       setSolution(game.solution),
@@ -58,17 +57,16 @@ const SudokuBoardComponent = () =>  {
   async function formatLockedCells(initialBoard){
     var boardArr = [];
     var rowArr2 = [];
-
     initialBoard.forEach((row, rowIndex) => {
-        row.forEach((cell, columnIndex) => {
-          if(cell === 0){
-            rowArr2.push(false);
-          }else{
-            rowArr2.push(true);
-          }
-        })
-        boardArr.push(rowArr2);
-        rowArr2 = [];
+      row.forEach((cell, columnIndex) => {
+        if (cell === 0) {
+          rowArr2.push(false);
+        } else {
+          rowArr2.push(true);
+        }
+      })
+      boardArr.push(rowArr2);
+      rowArr2 = [];
     })
     setLockedCells(boardArr);
   }
@@ -106,7 +104,7 @@ const SudokuBoardComponent = () =>  {
       console.log(solution)
   }
 
-  const handleButtonSubmitClick = () => {
+  const handleModalButtonClick = () => {
     setSuccessModalOpen(false);
     setFailModalOpen(false);
   }
@@ -156,25 +154,27 @@ const SudokuBoardComponent = () =>  {
         </button>
       </section>
 
+      <section id="modals">
       {successModalOpen && (
         <SudokuModalSuccess
-          onSubmit={handleButtonSubmitClick} 
-          onCancel={handleButtonSubmitClick} 
-          onClose={handleButtonSubmitClick}>
-          <h1>Success</h1>
-          <p>Modal for sudoku game successful completeion!</p>
+          onPlayAgain={() => {
+            handleModalButtonClick();
+            initialiseGameFromAPI();
+          }} 
+          onCancel={handleModalButtonClick()} 
+          onClose={handleModalButtonClick()}>
+          <h2>Success</h2>
+          <p>Congratulations, you completed the Sudoku!</p>
         </SudokuModalSuccess>
       )}
-
       {failModalOpen && (
         <SudokuModalFail
-          onSubmit={handleButtonSubmitClick} 
-          onCancel={handleButtonSubmitClick} 
-          onClose={handleButtonSubmitClick}>
-          <h1>Incorrect!</h1>
-          <p>Modal for sudoku game failed completeion!</p>
+          onClose={handleModalButtonClick()}>
+          <h2>Incorrect</h2>
+          <p>Keep going, you can do it!</p>
         </SudokuModalFail>
       )}
+      </section>
     </div>
   );
 };

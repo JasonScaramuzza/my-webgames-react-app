@@ -3,7 +3,7 @@ import './SudokuModalSuccess.css';
 
 
 
-const SudokuModalSuccess = ({onSubmit, onCancel, onClose, children}) =>  {
+const SudokuModalSuccess = ({onPlayAgain, onCancel, onClose, children}) =>  {
     return(
         <div className="modal-container">
             <div className="modal">
@@ -18,7 +18,7 @@ const SudokuModalSuccess = ({onSubmit, onCancel, onClose, children}) =>  {
                     {children}
                 </div>
                 <div className="modal-footer">
-                    <button className="btn btn-submit" onClick={() => onSubmit()}>Submit</button>
+                    <button className="btn btn-submit" onClick={() => onPlayAgain()}>Submit</button>
                     <button className="btn btn-close" onClick={() => onCancel()}>Cancel</button>
                 </div>
             </div>
