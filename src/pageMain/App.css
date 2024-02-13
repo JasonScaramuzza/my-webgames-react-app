@@ -52,9 +52,11 @@ img {
 .section-contact-me-container {
   background-color: var(--plum);
 }
+
 .section-projects-container {
   background-color: var(--dkblue);
 }
+
 .gradient-1{
   background: rgb(255,23,228);
   background: 
