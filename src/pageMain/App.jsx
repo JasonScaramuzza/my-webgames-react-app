@@ -48,6 +48,7 @@ function App() {
               </p>
               <h4>Technologies used include:</h4>
               <ul>
+                <li>React</li>
                 <li>HTML</li>
                 <li>CSS</li>
                 <li>SVG</li>
