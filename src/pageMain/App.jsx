@@ -10,7 +10,7 @@ import './App.css';
 
 function App() {
   return (
-    <div className="main-page">
+    <div id="main-page">
       
       <MyHeader />
 
@@ -56,15 +56,19 @@ function App() {
             </div>
             <div className="project-img">
               <img 
-                src="https://play-lh.googleusercontent.com/1-hPxafOxdYpYZEOKzNIkSP43HXCNftVJVttoo4ucl7rsMASXW3Xr6GlXURCubE1tA=w3840-h2160-rw" 
-                alt="placeholder">
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Sudoku_Puzzle_by_L2G-20050714_standardized_layout.svg/800px-Sudoku_Puzzle_by_L2G-20050714_standardized_layout.svg.png" 
+                alt="Game of sudoku">
               </img>
             </div>
           </article>
           <article>
             <div className="project-text">
-              <h4>Placeholder Project Type</h4>
-              <h3>Example Project Name</h3>
+              <h4>FrontendMasters Project</h4>
+              <div className="link-style-1-container">
+                <Link to="/pet-adoption"> 
+                    <h3>Pet Adoption</h3>
+                </Link>
+              </div>
               <p>Description of the project. This should be fairly concise while 
                 also describing the key components that you developed or worked on. 
                 It can be as long as you need it to be but should at least be a few 
@@ -73,9 +77,9 @@ function App() {
               </p>
               <h4>Technologies used include:</h4>
               <ul>
+                <li>React</li>
                 <li>HTML</li>
                 <li>CSS</li>
-                <li>SVG</li>
               </ul>
             </div>
             <div className="project-img">

@@ -1,76 +1,86 @@
 /* navbar */
+
+#nav-bar{
+  padding: 0;
+  margin: 0;
+  font-family: var(--sans);
+  background-color: var(--black);
+  color: var(--white);
+  font-size: var(--font-size);
+}
+
 nav {
     font-family: var(--mono);
     font-size: 80%;
     padding: 1rem;
-  }
-  
-  nav h1 a {
-    font-family: var(--sans);
-  }
-  
-  nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-  }
-  
-  nav li:first-child {
-    flex-basis: 100%;
-    text-align: center;
-  }
-  
-  /* FontAwesomeIcon React Components 
-  all have fa- classes */
-  nav [class*="fa-"] {  
-    font-size: 150%;
-    color: var(--aqua);
-  }
-  
-  nav h1 [class*="fa-"] { 
-    font-size: 100%;
-    color: var(--aqua);
-    margin-right:5px;
-  }
-  
-  nav a {
-    color: var(--white);
-    text-decoration: none;
-    display: block;
-  }
-  
-  nav a:hover,
-  nav [class*="fa-"]:hover{
-    color: var(--magenta);
-  }
-  
-  .link-style-button{
-    background-color: var(--magenta);
-    color: var(--white);
-    padding: 0.5rem;
-    border-radius: 5px;
-    font-family: var(--mono);
-    text-decoration: none;
-  }
-  
-  .link-style-button:hover{
-    color: var(--white);
-    background-color: var(--hotmag);
-  }
+}
 
-  @media (min-width: 850px) {
-    nav {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    nav li:first-child {
-      flex-basis: auto;
-      text-align: left;
-      margin-right: auto;
-    }
+nav h1 a {
+  font-family: var(--sans);
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+nav li:first-child {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+/* FontAwesomeIcon React Components 
+all have fa- classes */
+nav [class*="fa-"] {  
+  font-size: 150%;
+  color: var(--aqua);
+}
+
+nav h1 [class*="fa-"] { 
+  font-size: 100%;
+  color: var(--aqua);
+  margin-right:5px;
+}
+
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  display: block;
+}
+
+nav a:hover,
+nav [class*="fa-"]:hover{
+  color: var(--magenta);
+}
+
+.link-style-button{
+  background-color: var(--magenta);
+  color: var(--white);
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-family: var(--mono);
+  text-decoration: none;
+}
+
+.link-style-button:hover{
+  color: var(--white);
+  background-color: var(--hotmag);
+}
+
+@media (min-width: 850px) {
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
   }
+  nav li:first-child {
+    flex-basis: auto;
+    text-align: left;
+    margin-right: auto;
+  }
+}

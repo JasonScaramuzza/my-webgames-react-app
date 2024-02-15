@@ -6,7 +6,7 @@ import './MyFooter.css'
 
 const MyFooter = () =>  {
     return(
-        <footer>
+        <footer id="my-footer">
             <h2>Jason Scaramuzza &middot; Software Engineer</h2>
             <ul>
                 <li>

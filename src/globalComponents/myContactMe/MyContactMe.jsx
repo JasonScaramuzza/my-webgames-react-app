@@ -2,7 +2,7 @@ import './MyContactMe.css'
 
 const MyContactMe = () =>  {
     return(
-        <div className="section-contact-me-container">
+        <div id="section-contact-me-container">
             <section id="contact-me">
                 <h2>Contact me</h2>
                 <p>I'm always interested in hearing about new opportunities, 

@@ -21,8 +21,11 @@ html {
   box-sizing: inherit;
 }
 
-/* generic styles for the page */
-body {
+/* generic styles for the website */
+
+body, html {
+  height: 100%;
+  width: 100%;
   padding: 0;
   margin: 0;
   font-family: var(--sans);
@@ -49,9 +52,6 @@ img {
 }
 
 /* background colors */
-.section-contact-me-container {
-  background-color: var(--plum);
-}
 
 .section-projects-container {
   background-color: var(--dkblue);
@@ -159,6 +159,7 @@ img {
   }
 
   #projects {
+    height: 100%;
     max-width: 1200px;
     margin: 0 auto;
   }

@@ -1,12 +1,19 @@
 /* contact-me */
 
+#section-contact-me-container {
+  background-color: var(--plum);
+}
+
 #contact-me {
     width: 400px;
     text-align: center;
     margin: 0 auto;
     padding: 3rem 0;
-  }
-  
-  #contact-me p:last-child {
-    margin-top: 3rem;
-  }
+    font-family: var(--sans);
+    color: var(--white);
+    font-size: var(--font-size);
+}
+
+#contact-me p:last-child {
+  margin-top: 3rem;
+}
