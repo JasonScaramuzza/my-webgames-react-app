@@ -19,7 +19,7 @@ function App() {
         <p className="name">
           Hi my name is <span>Jason Scaramuzza.</span>
         </p>
-        <h2>I'm a software engineer.</h2>
+        <h2>I&apos;m a software engineer.</h2>
         <p>
           {" "}
           I specialize in frontend development with experience in HTML, CSS,

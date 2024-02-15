@@ -1,4 +1,3 @@
-import React from "react";
 import "./SudokuModalFail.css";
 
 const SudokuModalFail = ({ onClose, children }) => {

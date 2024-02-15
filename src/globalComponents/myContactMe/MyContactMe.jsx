@@ -6,8 +6,8 @@ const MyContactMe = () => {
       <section id="contact-me">
         <h2>Contact me</h2>
         <p>
-          I'm always interested in hearing about new opportunities, learning new
-          languages and design techniques.
+          I&apos;m always interested in hearing about new opportunities,
+          learning new languages and design techniques.
         </p>
         <p>
           <a
