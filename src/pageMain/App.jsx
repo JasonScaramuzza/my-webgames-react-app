@@ -15,21 +15,23 @@ function App() {
 
       <div className="gradient-1"></div>
 
-      <section id="intro">
-        <p className="name">
-          Hi my name is <span>Jason Scaramuzza.</span>
-        </p>
-        <h2>I&apos;m a software engineer.</h2>
-        <p>
-          {" "}
-          I specialize in frontend development with experience in HTML, CSS,
-          JavaScript and React{" "}
-        </p>
-        <p>
-          Currently I am engaged in work expereince at Riskwell, a Risk
-          Management SaaS based organisation, whilst looking for a job.
-        </p>
-      </section>
+      <div>
+        <section id="intro">
+          <p className="name">
+            Hi my name is <span>Jason Scaramuzza.</span>
+          </p>
+          <h2>I&apos;m a software engineer.</h2>
+          <p>
+            {" "}
+            I specialize in frontend development with experience in HTML, CSS,
+            JavaScript and React{" "}
+          </p>
+          <p>
+            Currently I am engaged in work expereince at Riskwell, a Risk
+            Management SaaS based organisation, whilst looking for a job.
+          </p>
+        </section>
+      </div>
 
       <div className="gradient-1"></div>
 
