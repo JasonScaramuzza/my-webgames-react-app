@@ -6,16 +6,6 @@ import MyFooter from "../../globalComponents/myFooter/MyFooter";
 
 import "./SudokuPage.css";
 
-const NAVBAR = [
-  "Jason Scaramuzza",
-  "Projects",
-  "About",
-  "Contact",
-  "LinkedIn",
-  "Github",
-  "Indeed Resume",
-];
-
 export function SudokuPage() {
   return (
     <div className="suduko-page">

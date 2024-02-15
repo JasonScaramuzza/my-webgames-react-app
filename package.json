@@ -19,6 +19,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css}\"",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx,css}\" --quiet",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -43,6 +45,12 @@
     ]
   },
   "devDependencies": {
-    "prettier": "^3.2.5"
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-react": "^7.33.2",
+    "prettier": "^3.2.5",
+    "vite": "^5.1.2"
   }
 }
