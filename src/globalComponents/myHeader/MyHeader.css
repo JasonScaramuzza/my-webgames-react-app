@@ -1,6 +1,6 @@
 /* navbar */
 
-#nav-bar{
+#nav-bar {
   padding: 0;
   margin: 0;
   font-family: var(--sans);
@@ -10,9 +10,9 @@
 }
 
 nav {
-    font-family: var(--mono);
-    font-size: 80%;
-    padding: 1rem;
+  font-family: var(--mono);
+  font-size: 80%;
+  padding: 1rem;
 }
 
 nav h1 a {
@@ -37,15 +37,15 @@ nav li:first-child {
 
 /* FontAwesomeIcon React Components 
 all have fa- classes */
-nav [class*="fa-"] {  
+nav [class*="fa-"] {
   font-size: 150%;
   color: var(--aqua);
 }
 
-nav h1 [class*="fa-"] { 
+nav h1 [class*="fa-"] {
   font-size: 100%;
   color: var(--aqua);
-  margin-right:5px;
+  margin-right: 5px;
 }
 
 nav a {
@@ -55,11 +55,11 @@ nav a {
 }
 
 nav a:hover,
-nav [class*="fa-"]:hover{
+nav [class*="fa-"]:hover {
   color: var(--magenta);
 }
 
-.link-style-button{
+.link-style-button {
   background-color: var(--magenta);
   color: var(--white);
   padding: 0.5rem;
@@ -68,7 +68,7 @@ nav [class*="fa-"]:hover{
   text-decoration: none;
 }
 
-.link-style-button:hover{
+.link-style-button:hover {
   color: var(--white);
   background-color: var(--hotmag);
 }

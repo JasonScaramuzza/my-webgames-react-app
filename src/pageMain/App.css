@@ -23,7 +23,8 @@ html {
 
 /* generic styles for the website */
 
-body, html {
+body,
+html {
   height: 100%;
   width: 100%;
   padding: 0;
@@ -34,7 +35,9 @@ body, html {
   font-size: var(--font-size);
 }
 
-h1,h2,h3 {
+h1,
+h2,
+h3 {
   margin: 0;
 }
 
@@ -57,12 +60,15 @@ img {
   background-color: var(--dkblue);
 }
 
-.gradient-1{
-  background: rgb(255,23,228);
-  background: 
-  linear-gradient(90deg, 
-  rgba(255,23,228,1) 5%, rgba(9,79,121,1) 40%, 
-  rgba(59,173,153,1) 70%, rgba(134,251,251,1) 95%);
+.gradient-1 {
+  background: rgb(255, 23, 228);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 23, 228, 1) 5%,
+    rgba(9, 79, 121, 1) 40%,
+    rgba(59, 173, 153, 1) 70%,
+    rgba(134, 251, 251, 1) 95%
+  );
   height: 2px;
 }
 
@@ -105,12 +111,12 @@ img {
   margin-bottom: calc(2.5rem * 1.5);
 }
 
-#projects .link-style-1-container a{
+#projects .link-style-1-container a {
   color: var(--aqua);
   text-decoration-color: var(--aqua);
 }
 
-#projects .link-style-1-container a:hover{
+#projects .link-style-1-container a:hover {
   color: var(--hotmag);
   text-decoration: none;
 }
@@ -151,7 +157,7 @@ img {
 
 /* Screen Resizing Accessability */
 
-@media (min-width: 550px){
+@media (min-width: 550px) {
   #projects article {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
@@ -195,5 +201,4 @@ img {
   #projects article:nth-child(odd) ul {
     justify-content: flex-start;
   }
-
 }

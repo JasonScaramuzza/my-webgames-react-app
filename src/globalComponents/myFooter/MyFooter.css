@@ -1,13 +1,13 @@
 #my-footer {
-    text-align: center;
-    padding: 4rem 0;
-    margin: 0;
-    font-family: var(--sans);
-    background-color: var(--black);
-    color: var(--white);
-    font-size: var(--font-size);
+  text-align: center;
+  padding: 4rem 0;
+  margin: 0;
+  font-family: var(--sans);
+  background-color: var(--black);
+  color: var(--white);
+  font-size: var(--font-size);
 }
-  
+
 #my-footer ul {
   list-style-type: none;
   padding: 0;
