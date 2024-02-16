@@ -104,8 +104,8 @@ html {
   text-overflow: ellipsis;
 }
 
-header > a,
-#pet-adoption-page > div > h1 {
+header h2,
+.details a {
   display: inline-block;
   background-image: url(http://static.frontendmasters.com/resources/2019-05-02-complete-intro-react-v5/image-logo.png);
   filter: brightness(150%);
@@ -157,6 +157,7 @@ header {
 .details h2 {
   text-align: center;
   margin: 5px 0px 20px 0px;
+  color: #333;
 }
 
 .carousel {

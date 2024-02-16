@@ -15,7 +15,7 @@ function App() {
 
       <div className="gradient-1"></div>
 
-      <div>
+      <div id="intro-container">
         <section id="intro">
           <p className="name">
             Hi my name is <span>Jason Scaramuzza.</span>
