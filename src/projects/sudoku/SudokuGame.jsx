@@ -43,7 +43,6 @@ const SudokuGame = () => {
 
   useEffect(() => {
     initialiseGameFromAPI();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   //fetch initial board from API
@@ -69,8 +68,8 @@ const SudokuGame = () => {
   async function formatLockedCells(initialBoard) {
     var boardArr = [];
     var rowArr2 = [];
-    initialBoard.forEach((row, rowIndex) => {
-      row.forEach((cell, columnIndex) => {
+    initialBoard.forEach((row) => {
+      row.forEach((cell) => {
         if (cell === 0) {
           rowArr2.push(false);
         } else {
