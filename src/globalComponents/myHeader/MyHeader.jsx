@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faCubes } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 import "./MyHeader.css";
 
@@ -21,17 +22,17 @@ const MyHeader = () => {
         <ul>
           <li>
             <h1>
-              <a href="home">
+              <Link to="/home">
                 <FontAwesomeIcon icon={faCubes} aria-hidden="true" />
                 <span>{NAVBAR[0]}</span>
-              </a>
+              </Link>
             </h1>
           </li>
           <li>
             <a href="#projects">{NAVBAR[1]}</a>
           </li>
           <li>
-            <a href="about">{NAVBAR[2]}</a>
+            <Link to="/about">{NAVBAR[2]}</Link>
           </li>
           <li>
             <a href="#contact-me">{NAVBAR[3]}</a>

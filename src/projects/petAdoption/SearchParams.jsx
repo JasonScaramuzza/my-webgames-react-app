@@ -30,9 +30,9 @@ const SearchParams = () => {
             e.preventDefault();
             const formData = new FormData(e.target);
             const obj = {
-              animal: formData.eet("animal") ?? "",
-              breed: formData.eet("breed") ?? "",
-              location: formData.eet("location") ?? "",
+              animal: formData.get("animal") ?? "",
+              breed: formData.get("breed") ?? "",
+              location: formData.get("location") ?? "",
             };
             setRequestParams(obj);
           }}
