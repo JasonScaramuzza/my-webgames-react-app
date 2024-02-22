@@ -1,8 +1,8 @@
 import MyContactMe from "../../globalComponents/myContactMe/MyContactMe";
 import MyFooter from "../../globalComponents/myFooter/MyFooter";
 import MyHeader from "../../globalComponents/myHeader/MyHeader";
-import "./PetAdoptionPage.css";
 import SearchParams from "./SearchParams";
+import "./PetAdoptionPage.css";
 
 //Pet Adoption PAGE
 
@@ -13,7 +13,7 @@ function PetAdoptionPage() {
 
       <div className="gradient-1"></div>
 
-      <header>
+      <header className="header-container">
         <h2>Adopt Me!</h2>
       </header>
 

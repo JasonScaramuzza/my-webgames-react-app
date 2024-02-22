@@ -4,6 +4,10 @@ import { useQuery } from "@tanstack/react-query";
 import ErrorBoundary from "./ErrorBoundary";
 import Carousel from "./Carousel";
 import FetchPet from "./FetchPet";
+import "./Details.css";
+import MyHeader from "../../globalComponents/myHeader/MyHeader";
+import MyContactMe from "../../globalComponents/myContactMe/MyContactMe";
+import MyFooter from "../../globalComponents/myFooter/MyFooter";
 
 const Details = () => {
   const { id } = useParams();
@@ -23,17 +27,27 @@ const Details = () => {
   const pet = results.data.pets[0];
 
   return (
-    <div className="details">
-      <Link to="/pet-adoption">Adopt Me!</Link>
-      <Carousel images={pet.images} />
-      <div>
-        <h1>{pet.name}</h1>
-        <h2>
-          {pet.animal} - {pet.breed} - {pet.city}, {pet.state}
-          <button>Adopt {pet.name}</button>
-          <p>{pet.description}</p>
-        </h2>
+    <div className="details-page">
+      <MyHeader />
+      <div className="gradient-1"></div>
+      <div className="details-container">
+        <div className="details">
+          <Link to="/pet-adoption">Adopt Me!</Link>
+          <Carousel images={pet.images} />
+          <div>
+            <h1>{pet.name}</h1>
+            <h2>
+              {pet.animal} - {pet.breed} - {pet.city}, {pet.state}
+              <button>Adopt {pet.name}</button>
+              <p>{pet.description}</p>
+            </h2>
+          </div>
+        </div>
       </div>
+      <div className="gradient-1"></div>
+      <MyContactMe />
+      <div className="gradient-1"></div>
+      <MyFooter />
     </div>
   );
 };

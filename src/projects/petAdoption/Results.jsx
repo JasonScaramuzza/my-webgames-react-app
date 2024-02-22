@@ -1,4 +1,5 @@
 import Pet from "./Pet";
+import "./Results.css";
 
 const Results = ({ pets }) => {
   return (
