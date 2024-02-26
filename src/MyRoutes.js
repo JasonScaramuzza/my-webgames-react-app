@@ -6,6 +6,7 @@ import AboutPage from "./pageAbout/AboutPage";
 import SudokuPage from "./projects/sudoku/SudokuPage";
 import PetAdoptionPage from "./projects/petAdoption/PetAdoptionPage";
 import Details from "./projects/petAdoption/Details";
+import LoginPage from "./projects/loginForm/LoginPage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -27,6 +28,7 @@ export const MyRoutes = () => {
           <Route path="/sudoku" element={<SudokuPage />} />
           <Route path="/pet-adoption" element={<PetAdoptionPage />} />
           <Route path="/pet-adoption/details/:id" element={<Details />} />
+          <Route path="/login-form-with-unit-tests" element={<LoginPage />} />
         </Routes>
       </QueryClientProvider>
     </Router>
