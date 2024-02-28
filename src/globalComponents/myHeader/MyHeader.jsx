@@ -29,7 +29,7 @@ const MyHeader = () => {
             </h1>
           </li>
           <li>
-            <a href="#projects">{NAVBAR[1]}</a>
+            <Link to="/projects">{NAVBAR[1]}</Link>
           </li>
           <li>
             <Link to="/about">{NAVBAR[2]}</Link>
