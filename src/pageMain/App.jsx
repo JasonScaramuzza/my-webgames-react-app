@@ -107,20 +107,26 @@ function App() {
           </article>
           <article>
             <div className="project-text">
-              <h4>Placeholder Project Type</h4>
-              <h3>Example Project Name</h3>
+              <h4>Personal Project</h4>
+              <Link to="/login-form-with-unit-tests">
+                <h3>Jest testing a login form</h3>
+              </Link>
               <p>
-                Description of the project. This should be fairly concise while
-                also describing the key components that you developed or worked
-                on. It can be as long as you need it to be but should at least
-                be a few sentences long. Be sure to include specific links
-                anywhere in the description.
+                Jest testing a login form that uses firebase. The form takes an
+                email address and password, runs input validation and then
+                attempts to log the user into &apos;an account&apos; using
+                firebase returning either success or failure to the user along
+                with appropriate feedback. This project will impliment Jest
+                testing. The purpose of this project is to build a basic page to
+                impliment testing on. This will be my first time using Jest
+                testing.
               </p>
               <h4>Technologies used include:</h4>
               <ul>
                 <li>HTML</li>
                 <li>CSS</li>
-                <li>SVG</li>
+                <li>Jest</li>
+                <li>Firebase</li>
               </ul>
             </div>
             <div className="project-img">
