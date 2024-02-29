@@ -100,7 +100,7 @@ function App() {
             </div>
             <div className="project-img">
               <img
-                src="https://play-lh.googleusercontent.com/1-hPxafOxdYpYZEOKzNIkSP43HXCNftVJVttoo4ucl7rsMASXW3Xr6GlXURCubE1tA=w3840-h2160-rw"
+                src="https://mtek3d.com/wp-content/uploads/2018/01/image-placeholder-500x500.jpg"
                 alt="placeholder"
               ></img>
             </div>
@@ -131,7 +131,7 @@ function App() {
             </div>
             <div className="project-img">
               <img
-                src="https://play-lh.googleusercontent.com/1-hPxafOxdYpYZEOKzNIkSP43HXCNftVJVttoo4ucl7rsMASXW3Xr6GlXURCubE1tA=w3840-h2160-rw"
+                src="https://mtek3d.com/wp-content/uploads/2018/01/image-placeholder-500x500.jpg"
                 alt="placeholder"
               ></img>
             </div>
