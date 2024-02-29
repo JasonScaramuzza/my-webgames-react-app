@@ -8,7 +8,7 @@ import SudokuPage from "./projects/sudoku/SudokuPage";
 import PetAdoptionPage from "./projects/petAdoption/PetAdoptionPage";
 import Details from "./projects/petAdoption/Details";
 import LoginPage from "./projects/loginForm/LoginPage";
-import Calendar from "./projects/calendarDateSelector/Calendar";
+import MyCalendar from "./projects/calendarDateSelector/MyCalendar";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -32,7 +32,7 @@ export const MyRoutes = () => {
           <Route path="/pet-adoption" element={<PetAdoptionPage />} />
           <Route path="/pet-adoption/details/:id" element={<Details />} />
           <Route path="/login-form" element={<LoginPage />} />
-          <Route path="/calendar" element={<Calendar />} />
+          <Route path="/calendar" element={<MyCalendar />} />
         </Routes>
       </QueryClientProvider>
     </Router>
