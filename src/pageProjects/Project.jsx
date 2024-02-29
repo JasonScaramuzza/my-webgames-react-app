@@ -16,7 +16,7 @@ const Project = (props) => {
     setProjectType(props.projectType ?? "No Project Type");
     setTitle(props.title ?? "No title");
     setTitlleLinkPath(props.titleLinkPath ?? "/home");
-    setDescription(props.description ?? "No description");
+    setDescription(props.description ?? <p>No description</p>);
     setImageSrc(
       props.imageSrc ??
         "https://mtek3d.com/wp-content/uploads/2018/01/image-placeholder-500x500.jpg",
@@ -41,7 +41,7 @@ const Project = (props) => {
           </Link>
         </div>
       </div>
-      <p>{description}</p>
+      {description}
       <div className="project-img-container">
         <img src={imageSrc} alt={imageAlt}></img>
       </div>

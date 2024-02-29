@@ -76,6 +76,7 @@ function App() {
               ></img>
             </div>
           </article>
+
           <article>
             <div className="project-text">
               <h4>FrontendMasters Project</h4>
@@ -108,8 +109,8 @@ function App() {
           <article>
             <div className="project-text">
               <h4>Personal Project</h4>
-              <Link to="/login-form-with-unit-tests">
-                <h3>Jest testing a login form</h3>
+              <Link to="/login-form">
+                <h3>Login form</h3>
               </Link>
               <p>
                 Jest testing a login form that uses firebase. The form takes an
@@ -126,7 +127,6 @@ function App() {
                 <li>HTML</li>
                 <li>CSS</li>
                 <li>Jest</li>
-                <li>Firebase</li>
               </ul>
             </div>
             <div className="project-img">
