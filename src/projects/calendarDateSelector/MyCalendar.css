@@ -1,0 +1,43 @@
+.add-event-container {
+  display: block;
+  border: 1px solid red;
+  margin: 0;
+  padding: 0;
+}
+
+.event-name-input {
+  border: 1px solid red;
+  border-radius: 2px;
+}
+
+.calendar-container {
+  width: 80%;
+  height: 1500px;
+  margin: 0 auto;
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+.calendar {
+  color: black;
+  background-color: white;
+  margin: 50px;
+}
+
+.rbc-header {
+  color: white;
+  background-color: #2284ca;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+}
+
+.rbc-allday-cell {
+  display: none;
+}
+
+.rbc-time-slot {
+  background-color: #e8f4fc;
+}
