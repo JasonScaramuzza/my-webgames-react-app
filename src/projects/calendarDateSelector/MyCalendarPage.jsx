@@ -5,6 +5,7 @@ import startOfWeek from "date-fns/startOfWeek";
 import getDay from "date-fns/getDay";
 import { useState } from "react";
 import Datepicker from "react-datepicker";
+import { useMemo } from "react";
 
 import MyHeader from "../../globalComponents/myHeader/MyHeader";
 import MyContactMe from "../../globalComponents/myContactMe/MyContactMe";
@@ -16,7 +17,6 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import "react-datepicker/dist/react-datepicker.css";
 
 import "./MyCalendar.css";
-import { useEffect } from "react";
 
 const locales = {
   "en-GB": require("date-fns/locale/en-GB"),
@@ -29,7 +29,9 @@ const localizer = dateFnsLocalizer({
   locales,
 });
 
-const MyCalendar = () => {
+const CALENDAR_COMPONENTS = {};
+
+const MyCalendarPage = () => {
   const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
   const [allEvents, setAllEvents] = useState(HardCodedEvents);
   const [calendarView, setCalendarView] = useState("month");
@@ -111,4 +113,4 @@ const MyCalendar = () => {
   );
 };
 
-export default MyCalendar;
+export default MyCalendarPage;
