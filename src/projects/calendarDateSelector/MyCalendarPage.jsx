@@ -1,4 +1,4 @@
-import { Calendar, dateFnsLocalizer } from "react-big-calendar";
+import { dateFnsLocalizer } from "react-big-calendar";
 import format from "date-fns/format";
 import parse from "date-fns/parse";
 import startOfWeek from "date-fns/startOfWeek";
@@ -17,6 +17,7 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import "react-datepicker/dist/react-datepicker.css";
 
 import "./MyCalendar.css";
+import MyCalendar from "./MyCalendar";
 
 const locales = {
   "en-GB": require("date-fns/locale/en-GB"),
@@ -29,7 +30,7 @@ const localizer = dateFnsLocalizer({
   locales,
 });
 
-const CALENDAR_COMPONENTS = {};
+//declare components here. pass components to wrapper MyCalendar which holds the calendar
 
 const MyCalendarPage = () => {
   const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
@@ -40,30 +41,33 @@ const MyCalendarPage = () => {
     setAllEvents([...allEvents, newEvent]);
   };
 
-  const components = {
-    //only needs to be changed initially,
-    //on allEvents change,
-    //on CalendarView Change
-    //
-    event: (event) => {
-      //event is not type safe
-      const eventData = event?.event?.data;
-      const eventTitle = event?.event?.title;
-      const eventType = eventData?.type;
-      console.log("components rendered");
+  const components = useMemo(
+    () => ({
+      //only needs to be changed initially,
+      //on allEvents change,
+      //on CalendarView Change
+      //
+      event: (event) => {
+        //event is not type safe
+        const eventData = event?.event?.data;
+        const eventTitle = event?.event?.title;
+        const eventType = eventData?.type;
+        console.log("components rendered");
 
-      if (eventType === "meal") {
-        return (
-          <MealEvent
-            data={eventData}
-            title={eventTitle}
-            calendarView={calendarView}
-          />
-        );
-      }
-      return null;
-    },
-  };
+        if (eventType === "meal") {
+          return (
+            <MealEvent
+              data={eventData}
+              title={eventTitle}
+              calendarView={calendarView}
+            />
+          );
+        }
+        return null;
+      },
+    }),
+    [],
+  );
 
   return (
     <>
@@ -92,17 +96,10 @@ const MyCalendarPage = () => {
         <button onClick={handleAddEvent}>Add Event</button>
       </div>
       <div className="calendar-container">
-        <Calendar
-          className="calendar"
+        <MyCalendar
           localizer={localizer}
-          events={allEvents}
-          views={["month", "week", "day"]}
-          //view = calendarView //Hook
-          //defaultView = //initial view
+          allEvents={allEvents}
           components={components}
-          //toolbar=
-          startAccessor="start"
-          endAccessor="end"
         />
       </div>
       <div className="gradient-1"></div>
