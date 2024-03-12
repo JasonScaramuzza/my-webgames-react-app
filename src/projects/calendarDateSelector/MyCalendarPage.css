@@ -10,57 +10,10 @@
   border-radius: 2px;
 }
 
-.calendar-container {
+.calendar-wrapper {
   width: 80%;
   height: 1500px;
   margin: 0 auto;
   margin-top: 150px;
   margin-bottom: 150px;
-}
-
-.calendar {
-  color: black;
-  background-color: white;
-  margin: 50px;
-}
-
-.rbc-header {
-  color: white;
-  background-color: #2284ca;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 36px;
-}
-
-.rbc-allday-cell {
-  display: none;
-}
-
-.rbc-time-slot {
-  background-color: #e8f4fc;
-}
-
-.rbc-time-slot:not(.rbc-toady .rbc-time-slot) {
-  background-color: white;
-}
-
-.rbc-event,
-.rbc-background-event {
-  padding: 0px;
-  border: none;
-}
-
-.rbc-day-slot .rbc-events-container {
-  margin-right: 0;
-}
-
-.rbc-event {
-  width: 100%;
-}
-
-.rbc-event-label {
-  display: none;
-  width: 100%;
 }
