@@ -6,7 +6,6 @@ import MyContactMe from "../../globalComponents/myContactMe/MyContactMe";
 import MyFooter from "../../globalComponents/myFooter/MyFooter";
 import HardCodedEvents from "./HardCodedEvents";
 
-import "react-big-calendar/lib/css/react-big-calendar.css";
 import "react-datepicker/dist/react-datepicker.css";
 
 import "./MyCalendarPage.css";

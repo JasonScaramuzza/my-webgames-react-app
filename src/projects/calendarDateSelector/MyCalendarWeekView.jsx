@@ -2,25 +2,46 @@
 import { useState } from "react";
 import CalendarCell from "./CalendarCell";
 import "./MyCalendarWeekView.css";
+import * as dateFns from 'date-fns'
+
+const formatOfYear = 'y';
+const formatOfMonth = 'MMMM';
+const formatOfWeek = '';
+const formatOfDay = 'd';
 
 const MyCalendarWeekView = (props) => {
   const locales = props.locales;
   const events = props.events;
-  const [daysInMonth, setDaysInMonth] = useState(
-    Array.from({ length: 5 }, () => Array(7).fill()),
-  );
+  const [currentDate, setCurrentDate] = useState(new Date())
+  const [daysInMonth, setDaysInMonth] = useState(calculateDaysInMonth());
+
   //console.log(locales, events);
+
+
+  function calculateDaysInMonth(){
+    //find the first day of currentDate
+    const firstDay = dateFns.startOfMonth(currentDate);
+    //find the last day of currentDate
+    const lastDay = dateFns.lastDayOfMonth(currentDate);
+    //Find the first day of week of firstDay
+    const startDate = dateFns.startOfWeek(firstDay);
+    //Find the first day of week of lastDay
+    const endDate = dateFns.lastDayOfWeek(lastDay)
+
+    const totalDate = dateFns.eachDayOfInterval({start:startDate, end:endDate})
+
+    return(totalDate);
+  }
+
 
   return (
     <div className="calendar-container">
       <div className="month-header">
-        <CalendarCell header={""} />
-        <CalendarCell header={"<<"} />
-        <CalendarCell header={"<"} />
-        <CalendarCell className="month-selector" header={"August 2022"} />
-        <CalendarCell header={">"} />
-        <CalendarCell header={">>"} />
-        <CalendarCell header={""} />
+        <button onClick={() => setCurrentDate(new Date(new Date().setFullYear(currentDate.getFullYear() - 1)))}>&lt;&lt;</button>
+        <button>&lt;</button>
+        <button className="month-selector">{dateFns.format(currentDate, formatOfMonth)} {dateFns.format(currentDate, formatOfYear)}</button>
+        <button>&gt;</button>
+        <button onClick={() => setCurrentDate(new Date(new Date().setFullYear(currentDate.getFullYear() + 1)))}>&gt;&gt;</button>
       </div>
 
       <div className="day-of-week-container">
@@ -34,17 +55,13 @@ const MyCalendarWeekView = (props) => {
       </div>
 
       <div className="calendar-cells-container">
-        {daysInMonth?.map((week, rowIndex) => {
-          return week.map((day, columnIndex) => {
-            return (
-              <div
-                className="calendar-cell"
-                key={"dIM" + rowIndex + columnIndex}
-              >
-                <CalendarCell header={day} />
-              </div>
-            );
-          });
+        {daysInMonth?.map((date, index) => {
+          {/*If date month != currentDate month then grey out the tile*/}
+          return(
+            <div key={index} className="calendar-cell">
+              <CalendarCell header={dateFns.format(date, formatOfDay)} />
+            </div>
+          );
         })}
       </div>
     </div>
